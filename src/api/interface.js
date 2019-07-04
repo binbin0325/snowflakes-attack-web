@@ -17,6 +17,13 @@ export function sendInterface(id,envGroupId) {
   })
 }
 
+export function sendInterfaceBatch(id,envGroupId) {
+  return request({
+    url: '/interfaceBatch/item/'+id+'/envGroup/'+envGroupId,
+    method: 'get',
+    baseURL: 'http://127.0.0.1:80/api/v1'
+  })
+}
 
 export function getInterfaceForMenuId(id) {
   return request({

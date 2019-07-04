@@ -432,7 +432,7 @@
         script:'',
         interfaceAttack:{
           attack:{},
-          item:{},
+          item:[],
           envGroupId:'',
           menuId:''
         },
@@ -522,6 +522,7 @@
         this.bucketsValues=[]
         this.errors=[]
         this.loading=true
+        this.interfaceAttack.item=[]
         var s=1000000000
         var ms=1000000
         if(this.envGroupId==''){
@@ -536,9 +537,11 @@
           });
         }else{
           this.interfaceAttack.attack=this.attack
-          this.interfaceAttack.item=this.detail
+          this.detail.request.send=this.url
+          this.interfaceAttack.item.push(this.detail)
           this.interfaceAttack.envGroupId=this.envGroupId
           this.interfaceAttack.menuId=this.selectNode.id
+          console.log(this.interfaceAttack)
           //发起攻击
           attackInterface(this.interfaceAttack).then(response => {
             getAttackReport(response.data.id).then(response=>{

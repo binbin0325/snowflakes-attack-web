@@ -21,6 +21,7 @@
                   <v-info :projectId="projectId" v-if="index==1"></v-info>
                   <v-manager :projectId="projectId" v-if="index==2"></v-manager>
                   <v-singInterfaceTest :projectId="projectId" v-if="index==3"></v-singInterfaceTest>
+                  <v-batchInterfaceTest :projectId="projectId" v-if="index==4"></v-batchInterfaceTest>
                 </el-main>
             </el-container>
         </el-container>
@@ -31,11 +32,13 @@
 import Info from './info'
 import Manager from './manager'
 import SingInterfaceTest from './SingInterfaceTest'
+import BatchInterfaceTest from './batchattack/BatchInterfaceTest'
 export default {
   components: {
     'v-info': Info,
     'v-manager': Manager,
-    'v-singInterfaceTest':SingInterfaceTest
+    'v-singInterfaceTest':SingInterfaceTest,
+    'v-batchInterfaceTest':BatchInterfaceTest
   },
   data() {
     return {

@@ -2,7 +2,7 @@
   <div>
     <el-row :gutter="10">
       <el-col :span="20">
-        <el-alert title="" type="success" :closable="false">当前空间 共({{projectList.length}})个项目</el-alert>
+        <el-alert title="" type="info" :closable="false" show-icon>我的项目 > 当前空间 共({{projectList.length}})个项目</el-alert>
       </el-col>
       <el-col :span="2">
         <!--<router-link class="pan-btn light-blue-btn" to="/project/add">创建项目</router-link>-->
@@ -11,11 +11,6 @@
       <el-col :span="2">
         <!--<router-link class="pan-btn light-blue-btn" to="/project/add">创建项目</router-link>-->
         <el-button type="success" @click="close()">退出空间</el-button>
-      </el-col>
-    </el-row>
-    <el-row :gutter="0">
-      <el-col :span="20">
-        <el-alert title="我的项目" type="info" :closable="false" show-icon></el-alert>
       </el-col>
     </el-row>
     <el-row :gutter="50">

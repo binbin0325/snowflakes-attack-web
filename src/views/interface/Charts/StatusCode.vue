@@ -46,7 +46,6 @@
           this.statusCodesData.push(obj)
         }
       }
-      console.log(this.statusCodesData)
       this.$nextTick(() => {
         this.initChart()
       })

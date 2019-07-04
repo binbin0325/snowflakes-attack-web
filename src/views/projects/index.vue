@@ -48,7 +48,7 @@
                 <el-tab-pane label="公共空间">
                   <el-table
                     :data="publicTableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
-                    style="width: 100%">
+                    style="width: 100%" v-if="!showList">
                     <el-table-column
                       label="Name"
                       prop="name">
@@ -77,6 +77,7 @@
                       </template>
                     </el-table-column>
                   </el-table>
+                  <v-list v-if="showList" :spaceId="spaceId"></v-list>
                 </el-tab-pane>
               </el-tabs>
             </div>
@@ -111,6 +112,7 @@ export default {
     },
     handleClick(tab, event) {
       this.initSpaces(tab.index)
+      this.showList=false
     },
     initSpaces(index){
       if(index==0){
